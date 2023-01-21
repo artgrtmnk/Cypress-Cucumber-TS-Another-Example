@@ -48,6 +48,7 @@ export default defineConfig({
   e2e: {
     specPattern: "**/*.feature",
     setupNodeEvents,
+    baseUrl: "https://www.saucedemo.com/"
   },
   screenshotOnRunFailure: false,
   chromeWebSecurity: false,
