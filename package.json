@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:ui": "npx cypress open",
+    "cy:headless": "npx cypress run"
   },
   "author": "Artem Gritsaenko",
   "license": "ISC",
