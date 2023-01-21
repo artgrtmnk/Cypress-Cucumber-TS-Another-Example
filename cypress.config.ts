@@ -2,6 +2,8 @@ import { defineConfig } from "cypress";
 import webpack from "@cypress/webpack-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+
 async function setupNodeEvents(
   on: Cypress.PluginEvents,
   config: Cypress.PluginConfigOptions
@@ -40,6 +42,7 @@ async function setupNodeEvents(
       },
     })
   );
+  allureWriter(on, config);
 
   return config;
 }
@@ -48,7 +51,10 @@ export default defineConfig({
   e2e: {
     specPattern: "**/*.feature",
     setupNodeEvents,
-    baseUrl: "https://www.saucedemo.com/"
+    baseUrl: "https://www.saucedemo.com/",
+    env: {
+      allureReuseAfterSpec: true
+    }
   },
   screenshotOnRunFailure: false,
   chromeWebSecurity: false,
