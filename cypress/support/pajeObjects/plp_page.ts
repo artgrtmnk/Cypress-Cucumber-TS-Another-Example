@@ -14,6 +14,13 @@ class ProductListPage extends BasePage{
     static get getPageName(): string { return NAME }
     static get getPageUrl(): string { return URL }
 
+    static clickOnRandomProduct() {
+        cy.get(".inventory_item_name").then((elements) => {
+            const randomItem = elements[Math.floor(Math.random() * elements.length)]
+            cy.wrap(randomItem).click({ force:true })
+        })
+    }
+
     // Assertions
     static checkIsOnPage() {
         ELEMENTS.burgerMenu().should('be.visible')

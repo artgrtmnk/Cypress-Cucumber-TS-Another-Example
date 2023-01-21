@@ -1,4 +1,7 @@
+import CartPage from "../pajeObjects/cart_page"
+import CheckoutPage from "../pajeObjects/checkout_page"
 import LoginPage from "../pajeObjects/login_page"
+import ProductDetailsPage from "../pajeObjects/pdp_page"
 import ProductListPage from "../pajeObjects/plp_page"
 
 /// <reference types="cypress" />
@@ -6,6 +9,9 @@ import ProductListPage from "../pajeObjects/plp_page"
 const PAGES = [
     LoginPage,
     ProductListPage,
+    ProductDetailsPage,
+    CartPage,
+    CheckoutPage
 ]
 
 class PageService {

@@ -30,6 +30,12 @@ class LoginPage extends BasePage{
         ELEMENTS.loginButton().click({ force: true })
     }
 
+    static login(username: string, password: string) {
+        this.fillUsernameField(username)
+        this.fillPaswordField(password)
+        this.clickOnLoginButton()
+    }
+
     // Assertions
     static checkIsOnPage() {
         ELEMENTS.loginButton().should('be.visible')
