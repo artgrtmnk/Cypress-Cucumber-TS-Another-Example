@@ -3,7 +3,7 @@ Feature: Item purchase
     Given User is logged in
 
   @e2eTest
-  Scenario Outline: User buyes an item : QA-3
+  Scenario Outline: User buyes an item successfuly : QA-3
     When User clicks on random item on Product List Page
     Then User is on the 'Product Details' Page
     When User clicks on Add To Cart

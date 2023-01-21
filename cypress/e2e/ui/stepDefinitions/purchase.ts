@@ -1,4 +1,5 @@
 import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
+
 import ProductListPage from '../../../support/pajeObjects/plp_page';
 import ProductDetailsPage from '../../../support/pajeObjects/pdp_page';
 import CartPage from '../../../support/pajeObjects/cart_page';

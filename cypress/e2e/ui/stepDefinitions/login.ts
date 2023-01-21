@@ -1,5 +1,6 @@
-import LoginPage from '../../../support/pajeObjects/login_page';
 import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
+
+import LoginPage from '../../../support/pajeObjects/login_page';
 
 /// <reference types="cypress" />
 
