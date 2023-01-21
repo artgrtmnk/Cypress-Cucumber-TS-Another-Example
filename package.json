@@ -1,0 +1,22 @@
+{
+  "name": "cypress-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artem Gritsaenko",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.3.0",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@cypress/webpack-preprocessor": "latest",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4"
+  }
+}
