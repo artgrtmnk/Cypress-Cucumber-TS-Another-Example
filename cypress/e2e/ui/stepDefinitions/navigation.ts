@@ -10,7 +10,8 @@ import ProductDetailsPage from '../../../support/pajeObjects/pdp_page';
 describe('Navigation Step Definitions', () => {
   Given('User has opened {string} page', (page: string) => {
     let pageUrl = PageService.getUrl(page)
-    cy.visit(`${pageUrl}/`)
+    Cypress.config('baseUrl', pageUrl)
+    cy.visit('/')
   });
 
   Given('User is logged in', () => {
