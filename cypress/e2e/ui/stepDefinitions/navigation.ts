@@ -1,5 +1,5 @@
 import PageService from '../../../support/helpers/pageService'
-import { Given } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 /// <reference types="cypress" />
 
@@ -11,4 +11,8 @@ describe('Navigation Step Definitions', () => {
 
     cy.visit('/')
   });
+
+  Then('User is on the {string} Page', (pageName: string) => {
+    PageService.checkIsOnCorrectPage(pageName)
+  })
 })

@@ -19,10 +19,6 @@ describe('Login Step Definitions', () => {
         LoginPage.clickOnLoginButton();
     })
 
-    Then('User was logged in', () => {
-        ProductListPage.checkIsOnPage()
-    })
-
     Then('User sees invalid credentials message {string}', (errorMsg: string) => {
         LoginPage.checkErrorMessageExists(errorMsg);
     })

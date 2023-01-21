@@ -31,6 +31,10 @@ class LoginPage extends BasePage{
     }
 
     // Assertions
+    static checkIsOnPage() {
+        ELEMENTS.loginButton().should('be.visible')
+    }
+
     static checkErrorMessageExists(errorMsg: string) {
         ELEMENTS.errorMessage().invoke('text').then((text: string) => {
             expect(text).to.eq(errorMsg, "Error message is not correct.")

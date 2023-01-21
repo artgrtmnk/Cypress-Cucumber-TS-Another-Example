@@ -7,7 +7,7 @@ Feature: Login
     When User inputs '<username>' as username
     And User inputs '<password>' as password
     And User presses Login button
-    Then User was logged in
+    Then User is on the 'Product List' Page
 
     Examples: 
       | username        | password     |

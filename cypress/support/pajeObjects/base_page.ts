@@ -10,5 +10,8 @@ abstract class BasePage {
     static get getPageUrl(): string {
         throw new NotImplementedException()
     }
+    static checkIsOnPage() {
+        throw new NotImplementedException()
+    }
 }
 export default BasePage

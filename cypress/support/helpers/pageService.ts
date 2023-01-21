@@ -18,6 +18,12 @@ class PageService {
         let targetPage = pages.find(page => page.getPageName == pageName + ' Page')
         return targetPage.getPageUrl
     }
+
+    static checkIsOnCorrectPage(pageName: string) {
+        let pages = this.getPages
+        let targetPage = pages.find(page => page.getPageName == pageName + ' Page')
+        targetPage.checkIsOnPage()
+    }
 }
 
 export default PageService
