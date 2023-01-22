@@ -8,7 +8,9 @@
     "cy:headless": "npx cypress run",
     "cy:allure": "allure generate --clean --output allure-results && yarn cy:headless --env allure=true",
     "allure:open": "allure serve allure-results",
-    "cy:allure:open": "allure generate --clean --output allure-results && yarn cy:allure && yarn allure:open"
+    "cy:allure:open": "allure generate --clean --output allure-results && yarn cy:allure && yarn allure:open",
+    "cy:smoke": "npx cypress run --env tags=@SmokeTest",
+    "cy:e2e": "npx cypress run --env tags=@e2eTest"
   },
   "author": "Artem Gritsaenko",
   "license": "ISC",
@@ -23,5 +25,12 @@
     "@shelex/cypress-allure-plugin": "^2.34.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "stepDefinitions": [
+      "cypress/e2e/**/*.{js,ts}"
+    ]
   }
 }
