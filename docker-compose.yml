@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  cypress-smoke:
+    image: cypress-cucumber
+    build: cypress-cucumber
+    container_name: cypress-smoke
+    command: npx cypress run --spec "cypress/e2e/features/e2e/*.feature"
+    volumes:
+      - ./cypress:/cypress
+  cypress-e2e:
+    image: cypress-cucumber
+    build: cypress-cucumber
+    container_name: cypress-e2e
+    command: npx cypress run --spec "cypress/e2e/features/smoke/*.feature"
+    volumes:
+      - ./cypress:/cypress
