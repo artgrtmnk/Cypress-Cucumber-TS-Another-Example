@@ -1,7 +1,7 @@
 # TS-Cypress-BDD
 
 ### About
-**Overview:** _TypeScript UI and API with BDD testing framework sample._
+**Overview:** _TypeScript UI with BDD testing framework sample._
 
 **Systems under test:**
 - UI: Saucedemo.com by SWAGLABS
