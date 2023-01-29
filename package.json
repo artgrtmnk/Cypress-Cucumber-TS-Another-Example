@@ -10,7 +10,14 @@
     "allure:open": "allure serve allure-results",
     "cy:allure:open": "allure generate --clean --output allure-results && yarn cy:allure && yarn allure:open",
     "cy:smoke": "npx cypress run --env tags=@SmokeTest",
-    "cy:e2e": "npx cypress run --env tags=@e2eTest"
+    "cy:sanity": "npx cypress run --env tags=@SanityTest",
+    "cy:e2e": "npx cypress run --env tags=@e2eTest",
+    "lint:check": "npx eslint cypress",
+    "lint:fix": "npx eslint cypress --fix",
+    "prettier:check": "npx prettier --check .",
+    "prettier:fix": "npx prettier --write .",
+    "format:fix:all": "yarn prettier:fix && yarn lint:fix",
+    "format:check:all": "yarn prettier:check && yarn lint:check"
   },
   "author": "Artem Gritsaenko",
   "license": "ISC",
@@ -23,6 +30,11 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@cypress/webpack-preprocessor": "latest",
     "@shelex/cypress-allure-plugin": "^2.34.0",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.3",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4"
   },

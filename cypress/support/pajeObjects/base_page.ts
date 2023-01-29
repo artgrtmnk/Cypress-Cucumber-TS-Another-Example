@@ -1,24 +1,23 @@
 /// <reference types="cypress" />
 
-
 abstract class BasePage {
-    abstract NAME: string;
-    abstract URL: string;
+  abstract NAME: string;
+  abstract URL: string;
 
-    abstract ELEMENTS: any;
+  abstract ELEMENTS;
 
-    public get getPageName(): string {
-        return this.NAME
-    }
+  public get getPageName(): string {
+    return this.NAME;
+  }
 
-    public get getPageUrl(): string {
-        return this.URL
-    }
+  public get getPageUrl(): string {
+    return this.URL;
+  }
 
-    public checkIsOnPage() {
-        cy.url().then((url) => {
-            expect(url).to.be.eq(this.getPageUrl)
-        })
-    }
+  public checkIsOnPage() {
+    cy.url().then((url) => {
+      expect(url).to.be.eq(this.getPageUrl);
+    });
+  }
 }
-export default BasePage
+export default BasePage;

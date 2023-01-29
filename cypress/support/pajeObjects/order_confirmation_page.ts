@@ -1,23 +1,22 @@
-import BasePage from "./base_page"
+import BasePage from './base_page';
 
 /// <reference types="cypress" />
 
-
 class OrderConfirmationPage extends BasePage {
-    NAME: string = 'Order Confirmation Page'
-    URL: string = 'https://www.saucedemo.com/checkout-complete.html'
+  NAME = 'Order Confirmation Page';
+  URL = 'https://www.saucedemo.com/checkout-complete.html';
 
-    ELEMENTS = {
-        'Complete Header': () => cy.get('.complete-header'),
-    }
+  ELEMENTS = {
+    'Complete Header': () => cy.get('.complete-header'),
+  };
 
-    // Actions
-    public checkOrderCompleteHeader = (headerText: string) => {
-        this.ELEMENTS["Complete Header"]()
-            .invoke('text')
-            .then((text: string) => {
-                expect(text).to.be.eq(headerText)
-            })
-    }
+  // Actions
+  public checkOrderCompleteHeader = (headerText: string) => {
+    this.ELEMENTS['Complete Header']()
+      .invoke('text')
+      .then((text: string) => {
+        expect(text).to.be.eq(headerText);
+      });
+  };
 }
-export default new OrderConfirmationPage
+export default new OrderConfirmationPage();

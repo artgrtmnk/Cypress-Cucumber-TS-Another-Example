@@ -1,0 +1,8 @@
+cypress/downloads
+allure-results
+cypress/e2e/features
+cypress/videos
+node_modules
+reports
+cypress/support/e2e.js
+cypress/support/commands.js

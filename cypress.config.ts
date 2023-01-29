@@ -1,21 +1,21 @@
-import { defineConfig } from "cypress";
-import webpack from "@cypress/webpack-preprocessor";
-import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
+import { defineConfig } from 'cypress';
+import webpack from '@cypress/webpack-preprocessor';
+import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
 
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 async function setupNodeEvents(
   on: Cypress.PluginEvents,
-  config: Cypress.PluginConfigOptions
+  config: Cypress.PluginConfigOptions,
 ): Promise<Cypress.PluginConfigOptions> {
   await addCucumberPreprocessorPlugin(on, config);
 
   on(
-    "file:preprocessor",
+    'file:preprocessor',
     webpack({
       webpackOptions: {
         resolve: {
-          extensions: [".ts", ".js"],
+          extensions: ['.ts', '.js'],
         },
         module: {
           rules: [
@@ -24,7 +24,7 @@ async function setupNodeEvents(
               exclude: [/node_modules/],
               use: [
                 {
-                  loader: "ts-loader",
+                  loader: 'ts-loader',
                 },
               ],
             },
@@ -32,7 +32,7 @@ async function setupNodeEvents(
               test: /\.feature$/,
               use: [
                 {
-                  loader: "@badeball/cypress-cucumber-preprocessor/webpack",
+                  loader: '@badeball/cypress-cucumber-preprocessor/webpack',
                   options: config,
                 },
               ],
@@ -40,7 +40,7 @@ async function setupNodeEvents(
           ],
         },
       },
-    })
+    }),
   );
   allureWriter(on, config);
 
@@ -49,12 +49,12 @@ async function setupNodeEvents(
 
 export default defineConfig({
   e2e: {
-    specPattern: "**/*.feature",
+    specPattern: '**/*.feature',
     setupNodeEvents,
-    baseUrl: "https://www.saucedemo.com/",
+    baseUrl: 'https://www.saucedemo.com/',
     env: {
-      allureReuseAfterSpec: true
-    }
+      allureReuseAfterSpec: true,
+    },
   },
   screenshotOnRunFailure: false,
   chromeWebSecurity: false,

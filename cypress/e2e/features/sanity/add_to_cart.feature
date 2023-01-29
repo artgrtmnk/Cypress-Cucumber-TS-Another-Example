@@ -2,12 +2,12 @@ Feature: Add item to the cart
   Background:
     Given User is logged in
 
-  @sanityTest
+  @SanityTest
   Scenario Outline: User adds items to cart successfuly : QA-4
     When User adds 3 items to the cart
     Then Cart counter number changes to '3'
 
-  @sanityTest
+  @SanityTest
   Scenario Outline: User removes items from cart successfuly : QA-5
     When User adds 3 items to the cart
     Then Cart counter number changes to '3'
