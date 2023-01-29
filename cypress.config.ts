@@ -56,6 +56,7 @@ export default defineConfig({
       allureReuseAfterSpec: true,
     },
   },
+  video: false,
   screenshotOnRunFailure: false,
   chromeWebSecurity: false,
   viewportWidth: 1920,
