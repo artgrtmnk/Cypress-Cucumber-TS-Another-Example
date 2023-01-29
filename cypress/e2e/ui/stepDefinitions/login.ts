@@ -1,23 +1,15 @@
-import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
+import { Given, Then } from '@badeball/cypress-cucumber-preprocessor'
+import { user } from '../../../fixtures/login_credentials.json'
 
 import LoginPage from '../../../support/pajeObjects/login_page';
 
 /// <reference types="cypress" />
 
 describe('Login Step Definitions', () => {
-    When('User inputs {string} as username', (username: string) => {
-        if (username != '[empty]')
-            LoginPage.fillUsernameField(username);
+    Given('User is logged in', () => {
+        cy.visit(LoginPage.getPageUrl)
+        LoginPage.login(user.username, user.password)
     });
-    
-    When('User inputs {string} as password', (password: string) => {
-        if (password != '[empty]')
-            LoginPage.fillPaswordField(password);
-    });
-    
-    When('User presses Login button', () => {
-        LoginPage.clickOnLoginButton();
-    })
 
     Then('User sees invalid credentials message {string}', (errorMsg: string) => {
         LoginPage.checkErrorMessageExists(errorMsg);

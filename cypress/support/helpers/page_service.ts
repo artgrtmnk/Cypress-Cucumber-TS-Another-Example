@@ -20,20 +20,21 @@ const PAGES = [
 ]
 
 class PageService {
-    private static get getPages(): Array<BasePage> {
+    private get getPages(): Array<BasePage> {
         return PAGES
     }
 
-    public static getUrl(pageName: string): string {
+    public getPage = (pageName: string) => {
         let pages = this.getPages
-        let targetPage = pages.find(page => page.getPageName == pageName + ' Page')
-        return targetPage.getPageUrl
+        return pages.find(page => page.getPageName == pageName)
     }
 
-    public static checkIsOnCorrectPage(pageName: string) {
-        let pages = this.getPages
-        let targetPage = pages.find(page => page.getPageName == pageName + ' Page')
-        targetPage.checkIsOnPage()
+    public getUrl = (pageName: string): string => {
+        return this.getPage(pageName).getPageUrl
+    }
+
+    public checkIsOnCorrectPage = (pageName: string) => {
+        this.getPage(pageName).checkIsOnPage()
     }
 }
-export default PageService
+export default new PageService

@@ -1,21 +1,21 @@
 /// <reference types="cypress" />
 
 
-const ELEMENTS = {
-    cartIcon: () => cy.get("#shopping_cart_container"),
-    cartElement: () => ELEMENTS.cartIcon().find('.shopping_cart_link'),
-    cartItemsCounter: () => ELEMENTS.cartIcon().find('.shopping_cart_badge')
-}
-
 class PageHeader {
+    ELEMENTS = {
+        'Cart Icon': () => cy.get("#shopping_cart_container"),
+        'Cart Element': () => this.ELEMENTS["Cart Icon"]().find('.shopping_cart_link'),
+        'Cart Items Counter': () => this.ELEMENTS["Cart Icon"]().find('.shopping_cart_badge')
+    }
+
     // Actions
     public clickOnCart = () => {
-        ELEMENTS.cartElement().click('center', { force: true })
+        this.ELEMENTS["Cart Element"]().click('center', { force: true })
     }
 
     // Assertions
     public checkCartItemsNumber = (num: string) => {
-        ELEMENTS.cartItemsCounter()
+        this.ELEMENTS["Cart Items Counter"]()
             .invoke('text')
             .then((text: string) => {
                 expect(text).to.be.eq(num)

@@ -1,11 +1,11 @@
-import NotImplementedException from "../exceptions"
-
 /// <reference types="cypress" />
 
 
 abstract class BasePage {
     abstract NAME: string;
     abstract URL: string;
+
+    abstract ELEMENTS: any;
 
     public get getPageName(): string {
         return this.NAME

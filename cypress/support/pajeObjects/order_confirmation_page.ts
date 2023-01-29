@@ -3,17 +3,17 @@ import BasePage from "./base_page"
 /// <reference types="cypress" />
 
 
-const ELEMENTS = {
-    completeHeader: () => cy.get('.complete-header'),
-}
-
 class OrderConfirmationPage extends BasePage {
     NAME: string = 'Order Confirmation Page'
     URL: string = 'https://www.saucedemo.com/checkout-complete.html'
 
+    ELEMENTS = {
+        'Complete Header': () => cy.get('.complete-header'),
+    }
+
     // Actions
     public checkOrderCompleteHeader = (headerText: string) => {
-        ELEMENTS.completeHeader()
+        this.ELEMENTS["Complete Header"]()
             .invoke('text')
             .then((text: string) => {
                 expect(text).to.be.eq(headerText)

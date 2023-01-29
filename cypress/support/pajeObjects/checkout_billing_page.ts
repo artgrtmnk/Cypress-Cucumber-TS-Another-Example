@@ -1,39 +1,24 @@
 import BasePage from "./base_page"
+import Actions from '../helpers/actions'
 
 /// <reference types="cypress" />
 
-
-const ELEMENTS = {
-    firstNameField: () => cy.get("[data-test='firstName']"),
-    lastNameField: () => cy.get("[data-test='lastName']"),
-    zipCodeField: () => cy.get("[data-test='postalCode']"),
-    continueButton: () => cy.get("[data-test='continue']"),
-}
 
 class CheckoutBillingPage extends BasePage {
     NAME: string = 'Checkout Billing Page'
     URL: string = 'https://www.saucedemo.com/checkout-step-one.html'
 
-    public fillFirstNameField = (firstname: string) => {
-        ELEMENTS.firstNameField().type(firstname)
-    }
-
-    public fillLastNameField = (lastname: string) => {
-        ELEMENTS.lastNameField().type(lastname)
-    }
-
-    public fillZipcodeField = (zipcode: string) => {
-        ELEMENTS.zipCodeField().type(zipcode)
+    ELEMENTS = {
+        'Firstname Field': () => cy.get("[data-test='firstName']"),
+        'Lastname Field': () => cy.get("[data-test='lastName']"),
+        'Zipcode Field': () => cy.get("[data-test='postalCode']"),
+        'Continue Button': () => cy.get("[data-test='continue']"),
     }
 
     public fillPersonalData = (firstname: string, lastname: string, zipcode: string) => {
-        this.fillFirstNameField(firstname)
-        this.fillLastNameField(lastname)
-        this.fillZipcodeField(zipcode)
-    }
-
-    public clickOnCheckout = () => {
-        ELEMENTS.continueButton().click({ force: true })
+        Actions.fillFieldWithValue(this.NAME, "Firstname Field", firstname)
+        Actions.fillFieldWithValue(this.NAME, "Lastname Field", lastname)
+        Actions.fillFieldWithValue(this.NAME, "Zipcode Field", zipcode)
     }
 }
 export default new CheckoutBillingPage

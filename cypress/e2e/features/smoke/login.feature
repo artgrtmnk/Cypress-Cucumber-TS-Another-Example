@@ -1,26 +1,26 @@
 Feature: Login
   Background:
-    Given User has opened 'Login' page
+    Given User has opened 'Login Page'
 
   @SmokeTest
   Scenario Outline: Login with correct credentials : QA-1
-    When User inputs '<username>' as username
-    And User inputs '<password>' as password
-    And User presses Login button
-    Then User is on the 'Product List' Page
+    When On 'Login Page' user enters in 'Username Field' value '<username>'
+    And On 'Login Page' user enters in 'Password Field' value '<password>'
+    And On 'Login Page' user clicks on 'Login Button'
+    Then User is on the 'Product List Page'
 
-    Examples: 
-      | username        | password     |
-      | standard_user   | secret_sauce |
+    Examples:
+      | username      | password     |
+      | standard_user | secret_sauce |
 
   @SmokeTest
   Scenario Outline: Login with invalid credentials : QA-2
-    When User inputs '<username>' as username
-    And User inputs '<password>' as password
-    And User presses Login button
+    When On 'Login Page' user enters in 'Username Field' value '<username>'
+    And On 'Login Page' user enters in 'Password Field' value '<password>'
+    And On 'Login Page' user clicks on 'Login Button'
     Then User sees invalid credentials message '<message>'
 
-    Examples: 
+    Examples:
       | username   | password   | message                                                                   |
       | [empty]    | nousername | Epic sadface: Username is required                                        |
       | nopassword | [empty]    | Epic sadface: Password is required                                        |
