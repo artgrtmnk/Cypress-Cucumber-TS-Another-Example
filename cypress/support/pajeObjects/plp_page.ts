@@ -3,27 +3,27 @@ import BasePage from "./base_page"
 /// <reference types="cypress" />
 
 
-const NAME = 'Product List Page'
-const URL = 'https://www.saucedemo.com/inventory.html'
-
 const ELEMENTS = {
-    burgerMenu : () => cy.get('#react-burger-menu-btn'),
+    inventoryItemName: () => cy.get(".inventory_item_name")
 }
 
-class ProductListPage extends BasePage{
-    static get getPageName(): string { return NAME }
-    static get getPageUrl(): string { return URL }
+class ProductListPage extends BasePage {
+    NAME: string = 'Product List Page'
+    URL: string = 'https://www.saucedemo.com/inventory.html'
 
-    static clickOnRandomProduct() {
-        cy.get(".inventory_item_name").then((elements) => {
+    // Actions
+    public clickOnRandomProduct = () => {
+        ELEMENTS.inventoryItemName().then((elements) => {
             const randomItem = elements[Math.floor(Math.random() * elements.length)]
-            cy.wrap(randomItem).click({ force:true })
+            cy.wrap(randomItem).click({ force: true })
         })
     }
 
     // Assertions
-    static checkIsOnPage() {
-        ELEMENTS.burgerMenu().should('be.visible')
+    public checkIsOnPage = () => {
+        cy.url().then((url) => {
+            expect(url).to.be.eq(this.getPageUrl)
+        })
     }
 }
-export default ProductListPage
+export default new ProductListPage

@@ -2,16 +2,19 @@ import NotImplementedException from "../exceptions"
 
 /// <reference types="cypress" />
 
+
 abstract class BasePage {
-    // Static abstract methods implementation
-    static get getPageName(): string {
-        throw new NotImplementedException()
+    abstract NAME: string;
+    abstract URL: string;
+
+    public get getPageName(): string {
+        return this.NAME
     }
-    static get getPageUrl(): string {
-        throw new NotImplementedException()
+
+    public get getPageUrl(): string {
+        return this.URL
     }
-    static checkIsOnPage() {
-        throw new NotImplementedException()
-    }
+
+    abstract checkIsOnPage(): any
 }
 export default BasePage
