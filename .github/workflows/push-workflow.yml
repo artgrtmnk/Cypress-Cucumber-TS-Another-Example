@@ -20,5 +20,5 @@ jobs:
      - name: Build docker image
        run: docker-compose build
 
-     - name: Run Cypress tests
+     - name: Run Lint check and fix errors and warnings
        run: docker-compose up
