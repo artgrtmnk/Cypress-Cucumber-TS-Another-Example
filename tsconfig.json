@@ -4,7 +4,8 @@
     "lib": ["es6", "dom"],
     "types": ["cypress", "node"],
     "moduleResolution": "node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["**/*.ts"]
 }

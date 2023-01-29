@@ -35,9 +35,9 @@
 ### Running tests with docker
 Build the docker image with:
 ```
-docker build -t cypress-cucumber . 
+docker-compose -f .ci/docker-compose-tests.yml build
 ```
 After it you could start docker compose, that would execute each test suite in separate container with:
 ```
-docker compose up
+docker-compose -f .ci/docker-compose-tests.yml up
 ```

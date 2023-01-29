@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress';
-import webpack from '@cypress/webpack-preprocessor';
+import * as webpack from '@cypress/webpack-preprocessor';
 import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
 
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
@@ -56,6 +56,7 @@ export default defineConfig({
       allureReuseAfterSpec: true,
     },
   },
+  video: false,
   screenshotOnRunFailure: false,
   chromeWebSecurity: false,
   viewportWidth: 1920,
