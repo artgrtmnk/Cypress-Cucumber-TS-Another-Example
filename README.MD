@@ -48,3 +48,5 @@ There are two checks:
 1. Linter (Prettier and eslint)
 2. Cypress test suite for the PRs, that runs sequentialy, first smoke test, if it pass, main suite with sanity and e2e tests.
 Both executes in the `docker containers`. CI implemented in the `.ci` folder.
+
+I wanna be a valuable change.
