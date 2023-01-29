@@ -1,9 +1,9 @@
 version: '3.8'
 services:
-  lint-check-and-fix:
+  lint-check:
     image: cypress-cucumber-lint
     build:
       context: ../
       dockerfile: .ci/Dockerfile.lint
     container_name: cypress-lint
-    command: format:fix:all
+    command: format:check:all
