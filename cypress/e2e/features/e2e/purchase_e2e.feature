@@ -7,7 +7,7 @@ Feature: Item purchase
     When User clicks on random item on Product List Page
     Then User is on the 'Product Details Page'
     When On 'Product Details Page' user clicks on 'Add To Cart Button'
-    Then Cart counter number changes to '1'
+    Then Cart counter number changes to '5'
     When User clicks on Cart icon
     Then User is on the 'Cart Page'
     When On 'Cart Page' user clicks on 'Checkout Button'
