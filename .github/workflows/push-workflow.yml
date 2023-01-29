@@ -20,5 +20,5 @@ jobs:
       - name: Build docker image
         run: docker-compose build
 
-      - name: Run Lint check and fix errors and warnings
+      - name: Run Lint check
         run: docker-compose up
