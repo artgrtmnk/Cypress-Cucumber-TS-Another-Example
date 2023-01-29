@@ -10,8 +10,8 @@ Feature: Login
     Then User is on the 'Product List Page'
 
     Examples:
-      | username      | password     |
-      | standard_user | secret_sauce |
+      | username       | password     |
+      | wrong_username | secret_sauce |
 
   @SmokeTest
   Scenario Outline: Login with invalid credentials : QA-2
