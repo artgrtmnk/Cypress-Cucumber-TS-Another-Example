@@ -1,0 +1,10 @@
+# Dockerfile for Lint check
+FROM node:16
+
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+
+ENTRYPOINT [ "yarn" ]
+
+RUN yarn install

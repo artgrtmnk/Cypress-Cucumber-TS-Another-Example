@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress';
-import webpack from '@cypress/webpack-preprocessor';
+import * as webpack from '@cypress/webpack-preprocessor';
 import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
 
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
