@@ -41,3 +41,10 @@ After it you could start docker compose, that would execute each test suite in s
 ```
 docker-compose -f .ci/docker-compose-tests.yml up
 ```
+
+### GitHub Actions
+GitHub Actions implemented for this repo. 
+There are two checks:
+1. Linter with smoke cypress test for any pushes
+2. Cypress test suite for the PRs
+Both executes in the `docker containers`. CI implemented in the `.ci` folder.
