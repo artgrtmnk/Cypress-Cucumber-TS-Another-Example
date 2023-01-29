@@ -37,4 +37,4 @@ jobs:
         run: docker-compose build
 
       - name: Run Cypress tests
-        run: docker-compose up --exit-code-from cypress-sanity --exit-code-from cypress-e2e
+        run: docker-compose up --exit-code-from cypress-e2e
