@@ -14,8 +14,8 @@ jobs:
       COMPOSE_FILE: .ci/docker-compose-lint.yml
 
     steps:
-            - name: Checkout code
-                  uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Build docker image
         run: docker-compose build
