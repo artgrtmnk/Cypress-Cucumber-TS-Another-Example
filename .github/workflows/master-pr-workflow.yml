@@ -14,11 +14,11 @@ jobs:
       COMPOSE_FILE: .ci/docker-compose-tests.yml
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Build docker image
-      run: docker-compose build
+      - name: Build docker image
+        run: docker-compose build
 
-    - name: Run Cypress tests
-      run: docker-compose up
+      - name: Run Cypress tests
+        run: docker-compose up
