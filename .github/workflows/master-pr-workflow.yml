@@ -1,0 +1,24 @@
+name: Master Pull Request Workflow
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+      - 'feature/**'
+
+jobs:
+  test:
+    name: Run test suite
+    runs-on: ubuntu-latest
+    env:
+      COMPOSE_FILE: .ci/docker-compose-tests.yml
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build docker image
+      run: docker-compose build
+
+    - name: Run Cypress tests
+      run: docker-compose up
