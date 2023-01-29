@@ -1,6 +1,5 @@
 import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
 
-import PageHeader from '../../../support/pajeObjects/header_component';
 import ProductListPage from '../../../support/pajeObjects/plp_page';
 import CheckoutBillingPage from '../../../support/pajeObjects/checkout_billing_page';
 import OrderConfirmationPage from '../../../support/pajeObjects/order_confirmation_page';
@@ -17,10 +16,6 @@ describe('Purchase Step Definitions', () => {
         (firstname: string, lastName: string, zipcode: string) => {
             CheckoutBillingPage.fillPersonalData(firstname, lastName, zipcode)
         });
-
-    Then('Cart counter number changes to {string}', (num: string) => {
-        PageHeader.checkCartItemsNumber(num);
-    })
 
     Then('Checkout success message appears', () => {
         OrderConfirmationPage.checkOrderCompleteHeader("THANK YOU FOR YOUR ORDER")

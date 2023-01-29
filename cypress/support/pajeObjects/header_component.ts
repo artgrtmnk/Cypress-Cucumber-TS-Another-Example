@@ -21,5 +21,9 @@ class PageHeader {
                 expect(text).to.be.eq(num)
             })
     }
+
+    public checkCartIsEmpty = () => {
+        this.ELEMENTS["Cart Items Counter"]().should('not.exist')
+    }
 }
 export default new PageHeader

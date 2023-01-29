@@ -5,6 +5,11 @@ services:
     build: cypress-cucumber
     container_name: cypress-smoke
     command: npx cypress run --spec "cypress/e2e/features/e2e/*.feature"
+  cypress-sanity:
+    image: cypress-cucumber
+    build: cypress-cucumber
+    container_name: cypress-e2e
+    command: npx cypress run --spec "cypress/e2e/features/sanity/*.feature"
   cypress-e2e:
     image: cypress-cucumber
     build: cypress-cucumber

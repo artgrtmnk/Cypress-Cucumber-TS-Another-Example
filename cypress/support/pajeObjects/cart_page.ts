@@ -9,6 +9,14 @@ class CartPage extends BasePage {
 
     ELEMENTS = {
         'Checkout Button': () => cy.get("[data-test='checkout']"),
+        'Remove Button': () => cy.contains("Remove"),
+    }
+
+    // Actions
+    public removeItemsFromCart = (numberOfItems: number) => {
+        for (let i = 0; i < numberOfItems; i++) {
+            this.ELEMENTS["Remove Button"]().click()
+        }
     }
 }
 export default new CartPage
