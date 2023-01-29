@@ -6,4 +6,4 @@ services:
       context: ../
       dockerfile: .ci/Dockerfile.lint
     container_name: cypress-lint
-    command: format:fix:all
+    command: format:check:all

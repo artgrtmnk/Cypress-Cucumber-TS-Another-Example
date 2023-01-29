@@ -1,24 +1,24 @@
-name: Push Workflow
+name: Push Workflow - Lint Checks
 on:
-   push:
-     branches:
-       - master
-       - main
-       - 'feature/**'
+  push:
+    branches:
+      - master
+      - main
+      - 'feature/**'
 
 jobs:
-   test:
-     name: Run test suite
-     runs-on: ubuntu-latest
-     env:
-       COMPOSE_FILE: .ci/docker-compose-lint.yml
+  test:
+    name: Run test suite
+    runs-on: ubuntu-latest
+    env:
+      COMPOSE_FILE: .ci/docker-compose-lint.yml
 
-     steps:
-     - name: Checkout code
-       uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-     - name: Build docker image
-       run: docker-compose build
+      - name: Build docker image
+        run: docker-compose build
 
-     - name: Run Lint check and fix errors and warnings
-       run: docker-compose up
+      - name: Run Lint check and fix errors and warnings
+        run: docker-compose up
