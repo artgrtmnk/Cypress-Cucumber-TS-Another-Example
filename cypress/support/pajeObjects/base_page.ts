@@ -15,6 +15,10 @@ abstract class BasePage {
         return this.URL
     }
 
-    abstract checkIsOnPage(): any
+    public checkIsOnPage() {
+        cy.url().then((url) => {
+            expect(url).to.be.eq(this.getPageUrl)
+        })
+    }
 }
 export default BasePage

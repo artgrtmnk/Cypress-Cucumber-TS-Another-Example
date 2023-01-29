@@ -15,10 +15,5 @@ class CartPage extends BasePage {
     public clickOnCheckout = () => {
         ELEMENTS.checkoutButton().click({ force: true })
     }
-
-    // Assertions
-    public checkIsOnPage = () => {
-        ELEMENTS.checkoutButton().should('be.visible')
-    }
 }
 export default new CartPage

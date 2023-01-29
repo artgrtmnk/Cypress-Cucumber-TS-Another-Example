@@ -9,7 +9,7 @@ const ELEMENTS = {
 
 class OrderConfirmationPage extends BasePage {
     NAME: string = 'Order Confirmation Page'
-    URL: string = 'https://www.saucedemo.com/inventory-item.html?id='
+    URL: string = 'https://www.saucedemo.com/checkout-complete.html'
 
     // Actions
     public checkOrderCompleteHeader = (headerText: string) => {
@@ -18,11 +18,6 @@ class OrderConfirmationPage extends BasePage {
             .then((text: string) => {
                 expect(text).to.be.eq(headerText)
             })
-    }
-
-    // Assertions
-    public checkIsOnPage = () => {
-        ELEMENTS.completeHeader().should('be.visible')
     }
 }
 export default new OrderConfirmationPage

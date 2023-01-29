@@ -9,16 +9,11 @@ const ELEMENTS = {
 
 class CheckoutOrderPage extends BasePage {
     NAME: string = 'Checkout Order Page'
-    URL: string = 'https://www.saucedemo.com/inventory-item.html?id='
+    URL: string = 'https://www.saucedemo.com/checkout-step-two.html'
 
     // Actions
     public clickOnFinishButton = () => {
         ELEMENTS.finishButton().click({ force: true })
-    }
-
-    // Assertions
-    public checkIsOnPage = () => {
-        ELEMENTS.finishButton().should('be.visible')
     }
 }
 export default new CheckoutOrderPage

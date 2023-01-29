@@ -12,7 +12,7 @@ const ELEMENTS = {
 
 class CheckoutBillingPage extends BasePage {
     NAME: string = 'Checkout Billing Page'
-    URL: string = 'https://www.saucedemo.com/inventory-item.html?id='
+    URL: string = 'https://www.saucedemo.com/checkout-step-one.html'
 
     public fillFirstNameField = (firstname: string) => {
         ELEMENTS.firstNameField().type(firstname)
@@ -34,11 +34,6 @@ class CheckoutBillingPage extends BasePage {
 
     public clickOnCheckout = () => {
         ELEMENTS.continueButton().click({ force: true })
-    }
-
-    // Assertions
-    public checkIsOnPage = () => {
-        ELEMENTS.continueButton().should('be.visible')
     }
 }
 export default new CheckoutBillingPage

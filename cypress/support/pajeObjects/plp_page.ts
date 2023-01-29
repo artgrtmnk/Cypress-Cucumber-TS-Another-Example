@@ -18,12 +18,5 @@ class ProductListPage extends BasePage {
             cy.wrap(randomItem).click({ force: true })
         })
     }
-
-    // Assertions
-    public checkIsOnPage = () => {
-        cy.url().then((url) => {
-            expect(url).to.be.eq(this.getPageUrl)
-        })
-    }
 }
 export default new ProductListPage

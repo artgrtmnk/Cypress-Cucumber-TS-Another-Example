@@ -11,7 +11,10 @@ Feature: Item purchase
     When User clicks on Cart icon
     Then User is on the 'Cart' Page
     When User clicks on Checkout
+    Then User is on the 'Checkout Billing' Page
     And User fills firstname with 'John', lastname with 'Doe', zipcode with '12345'
     And User clicks on Continue within Checkout
+    Then User is on the 'Checkout Order' Page
     When User clicks on Finish
-    Then Checkout success message appears
+    Then User is on the 'Order Confirmation' Page
+    And Checkout success message appears
