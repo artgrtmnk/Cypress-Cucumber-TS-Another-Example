@@ -1,4 +1,4 @@
-name: Master Pull Request Workflow
+name: Pull Request Workflow - Cypress Tests
 on:
   pull_request:
     branches:
