@@ -1,5 +1,5 @@
 node_modules
-package-lock.json
 allure-results
 cypress/videos
+cypress/downloads
 yarn.lock
