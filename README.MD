@@ -1,5 +1,7 @@
 # TS-Cypress-BDD
 
+![Lint Checks](https://github.com/artgrtmnk/TS-Cypress-Cucumber-UI-Example/actions/workflows/push-workflow.yml/badge.svg)
+![Cypress Tests](https://github.com/artgrtmnk/TS-Cypress-Cucumber-UI-Example/actions/workflows/master-pr-workflow.yml/badge.svg)
 ### About
 **Overview:** _TypeScript UI with BDD testing framework sample._
 
