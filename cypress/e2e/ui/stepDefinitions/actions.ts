@@ -14,7 +14,9 @@ describe('Common Actions Step Definitions', () => {
 
   When(
     'On {string} user enters in {string} value {string}',
-    (pageName: string, fieldName: string, value: string) => {
+    (pageName: string,
+      fieldName: string,
+      value: string) => {
       Actions.fillFieldWithValue(pageName, fieldName, value);
     },
   );
