@@ -19,6 +19,6 @@ describe('Purchase Step Definitions', () => {
   );
 
   Then('Checkout success message appears', () => {
-    OrderConfirmationPage.checkOrderCompleteHeader('THANK YOU FOR YOUR ORDER');
+    OrderConfirmationPage.checkOrderCompleteHeader('Thank you for your order!');
   });
 });
