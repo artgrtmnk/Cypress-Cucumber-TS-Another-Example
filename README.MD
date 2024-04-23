@@ -45,6 +45,6 @@ docker-compose -f .ci/docker-compose-tests.yml up
 ## GitHub Actions
 #### GitHub Actions are implemented for this repo. 
 There are two checks:
-1. Linter (Prettier and eslint)
+1. Linter (Prettier and eslint) 
 2. Cypress test suite for the PRs, that runs sequentialy, first smoke test, if it pass, main suite with sanity and e2e tests.
 Both executes in the `docker containers`. CI implemented in the `.ci` folder.
